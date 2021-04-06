@@ -1,7 +1,7 @@
 {
-  "name": "bookinfoapi",
+  "name": "bancoideasapi",
   "version": "0.0.1",
-  "description": "API to get book cover and info",
+  "description": "API para administración banco de ideas",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
   },
   "keywords": [
     "API",
-    "BookInfo"
+    "BancoIdeas"
   ],
   "author": "Walter G. Montoya García <stgiovanny@gmail.com>",
   "license": "ISC",

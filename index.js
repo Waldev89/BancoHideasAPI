@@ -1,6 +1,5 @@
 const express = require('express')
 const app = express()
-const bodyParser = require('body-parser')
 const cors = require('cors')
 const { PORT } = require('./config')
 
@@ -8,18 +7,23 @@ const { PORT } = require('./config')
 require('./db')
 
 // Rutas
-const bookRoutes = require('./components/book/routes')
+const ideaRoutes = require('./components/idea/routes')
+const categoriaRoutes = require('./components/categoria/routes')
+const estadoRoutes = require('./components/estado/routes')
 
 // Middleware para permitir recibir solicitudes HTTP desde cualquier dominio
 app.use(cors())
 
-// Middleware para leer datos en JSON desde el body de la petición
-app.use(bodyParser.json())
+// Funcionalidad para leer datos en JSON desde el body de la petición
+app.use(express.json())
+app.use(express.urlencoded({
+  extended: true
+}));
 
 // Instalación de rutas en el router principal
-app.use('/books', bookRoutes)
-
-app.use('/covers', express.static('covers'))
+app.use('/idea', ideaRoutes)
+app.use('/categoria', categoriaRoutes)
+app.use('/estado', estadoRoutes)
 
 app.listen(PORT, () => {
   console.log(`Server APP listening at localhost:${PORT}`)
