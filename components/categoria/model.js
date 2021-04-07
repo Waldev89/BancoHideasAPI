@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 //Creación de schema de categorias de base de datos mongo
 //Schema de Categorias
 const categoriaSchema = new mongoose.Schema({
+  id: { type: String, require: true},
   descripcion: { type: String, required: true }
 })
 
